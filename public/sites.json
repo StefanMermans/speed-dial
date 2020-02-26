@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Horriblesubs",
+    "url": "https://horriblesubs.info/#",
+    "icon": "images/horriblesubs.jpg"
+  },
+  {
+    "name": "youtube",
+    "url": "https://youtube.com",
+    "icon": "images/youtube.png"
+  },
+  {
+    "name": "Tweakers",
+    "url": "https://tweakers.net",
+    "icon": "images/tweakers.png",
+    "color": "white",
+    "backgroundColor": "#cc0033"
+  },
+  {
+    "name": "MyAnimeList",
+    "url": "https://myanimelist.net",
+    "icon": "images/myAnimeList.png",
+    "color": "white",
+    "backgroundColor": "#2e51a2"
+  },
+  {
+    "name": "1337x",
+    "url": "https://1337x.to",
+    "icon": "images/1337x.png"
+  },
+  {
+    "name": "Arknights toolbox",
+    "url": "https://aceship.github.io/AN-EN-Tags/index.html",
+    "icon": "images/rhodesIsland.png",
+    "color": "white",
+    "backgroundColor": "black"
+  }
+]

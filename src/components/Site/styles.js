@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  color: ${({ color }) => color};
   
   overflow: hidden;
   text-align: center;
@@ -18,12 +20,14 @@ export const Container = styled.div`
 
 export const Link = styled.a`
   border-radius: 20px;
-  background-color: white;
+  overflow: hidden;
+  background-color: ${({ backgroundColor }) => backgroundColor};
   box-shadow: 0 0 8px rgb(80, 80, 80);
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  padding-top: 5px;
+  height: 100px;
   text-decoration: none;
-  color: black;
+  color: inherit;
   display: block;
 `;
 
