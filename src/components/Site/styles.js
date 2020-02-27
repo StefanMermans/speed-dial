@@ -8,7 +8,7 @@ export const Container = styled.div`
   align-items: center;
   user-select: none;
   color: ${({ color }) => color};
-  
+
   overflow: hidden;
   text-align: center;
   transition: transform 0.2s;
@@ -25,6 +25,7 @@ export const Link = styled.a`
   box-shadow: 0 0 8px rgb(80, 80, 80);
   width: 100px;
   padding-top: 5px;
+  box-sizing: border-box;
   height: 100px;
   text-decoration: none;
   color: inherit;

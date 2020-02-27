@@ -2,7 +2,7 @@
   {
     "name": "Horriblesubs",
     "url": "https://horriblesubs.info/#",
-    "icon": "images/horriblesubs.jpg"
+    "icon": "images/horriblesubs.png"
   },
   {
     "name": "youtube",
@@ -13,14 +13,12 @@
     "name": "Tweakers",
     "url": "https://tweakers.net",
     "icon": "images/tweakers.png",
-    "color": "white",
     "backgroundColor": "#cc0033"
   },
   {
     "name": "MyAnimeList",
     "url": "https://myanimelist.net",
     "icon": "images/myAnimeList.png",
-    "color": "white",
     "backgroundColor": "#2e51a2"
   },
   {
@@ -32,7 +30,43 @@
     "name": "Arknights toolbox",
     "url": "https://aceship.github.io/AN-EN-Tags/index.html",
     "icon": "images/rhodesIsland.png",
-    "color": "white",
+    "backgroundColor": "black"
+  },
+  {
+    "name": "Blackboard",
+    "url": "http://bb.avans.nl/",
+    "icon": "images/blackboard.png"
+  },
+  {
+    "name": "Github",
+    "url": "https://github.com/",
+    "icon": "images/github.png"
+  },
+  {
+    "name": "Reddit",
+    "url": "https://www.reddit.com/",
+    "icon": "images/reddit.png"
+  },
+  {
+    "name": "GitLab",
+    "url": "https://gitlab.com/users/sign_in",
+    "icon": "images/gitlab.png"
+  },
+  {
+    "name": "Sam",
+    "url": "https://sam.avans.nl/student/",
+    "icon": "images/avans.png"
+  },
+  {
+    "name": "Twitch",
+    "url": "https://www.twitch.tv/",
+    "icon": "images/twitch.png",
+    "backgroundColor": "#593e83"
+  },
+  {
+    "name": "D&D beyond",
+    "url": "https://www.dndbeyond.com/",
+    "icon": "images/dndbeyond.png",
     "backgroundColor": "black"
   }
 ]
