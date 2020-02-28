@@ -19,6 +19,14 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
+    - name: Deploy
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: ${{ secrets.HOST }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        username: stefan
+        source: build/
+        target: ~/node-backend/public
 #     - name: Deploy
 #       uses: appleboy/ssh-action@v0.0.7
 #       with:
