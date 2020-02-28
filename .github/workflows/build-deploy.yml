@@ -19,7 +19,7 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
-    - name: SSH Commands
+    - name: Deploy
       uses: appleboy/ssh-action@v0.0.7
       with:
         host: ${{ secrets.HOST }}
