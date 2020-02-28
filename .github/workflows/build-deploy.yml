@@ -19,4 +19,11 @@ jobs:
       run: npm install
     - name: Build
       run: npm run build
+    - name: SSH Commands
+      uses: appleboy/ssh-action@v0.0.7
+      with:
+        host: ${{ secrets.HOST }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        username: stefan
+        script: scp -r build/ stefan@personalswh.com:~/node-backend/public
   
