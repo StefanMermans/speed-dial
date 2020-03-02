@@ -73,5 +73,10 @@
     "name": "WhatsApp",
     "url": "https://web.whatsapp.com/",
     "icon": "images/whatsapp.png"
+  },
+  {
+    "name": "Gmail",
+    "url": "https://mail.google.com/",
+    "icon": "images/gmail.png"
   }
 ]

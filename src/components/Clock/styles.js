@@ -5,9 +5,11 @@ export const Container = styled.div`
 `;
 
 export const Time = styled.div`
-  font-size: 64px;
+  font-size: 124px;
+  font-weight: 100;
 `;
 
 export const DateContainer = styled.div`
-  font-size: 24px;
+  font-size: 38px;
+  font-weight: 300;
 `;
