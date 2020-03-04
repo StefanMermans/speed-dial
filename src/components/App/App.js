@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppContainer, ClockWrapper } from "./styles";
 import SiteList from "../SiteList/SiteList"
-import background from "../../background.png"
+import background from "../../background-compressed.jpg"
 import Clock from '../Clock/Clock';
 
 function App() {
