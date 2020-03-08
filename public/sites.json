@@ -78,5 +78,15 @@
     "name": "Gmail",
     "url": "https://mail.google.com/",
     "icon": "images/gmail.png"
+  },
+  {
+    "name": "GoogleDrive",
+    "url": "https://drive.google.com/drive/my-drive",
+    "icon": "images/drive.png"
+  },
+  {
+    "name": "GoogleKeep",
+    "url": "https://keep.google.com/",
+    "icon": "images/googleKeep.png"
   }
 ]
