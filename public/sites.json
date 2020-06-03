@@ -88,5 +88,11 @@
     "name": "GoogleKeep",
     "url": "https://keep.google.com/",
     "icon": "images/googleKeep.png"
+  },
+  {
+    "name": "E7 database",
+    "url": "https://e7herder.com/",
+    "icon": "images/iseria.png",
+    "backgroundColor": "#ffffff"
   }
 ]
