@@ -94,5 +94,11 @@
     "url": "https://e7herder.com/",
     "icon": "images/iseria.png",
     "backgroundColor": "#ffffff"
+  },
+  {
+    "name": "E7 damage calc",
+    "url": "https://maphe.github.io/e7-damage-calc/",
+    "icon": "images/e7calc.png",
+    "backgroundColor": "#000000"
   }
 ]
