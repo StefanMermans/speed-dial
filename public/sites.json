@@ -100,5 +100,10 @@
     "url": "https://maphe.github.io/e7-damage-calc/",
     "icon": "images/e7calc.png",
     "backgroundColor": "#000000"
+  },
+  {
+    "name": "Tabler icons",
+    "url": "https://tablericons.com/",
+    "icon": "images/tablericons.png"
   }
 ]
