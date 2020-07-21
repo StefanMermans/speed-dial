@@ -12,6 +12,7 @@ export const AppContainer = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow-y: auto;
 `;
 
 export const ClockWrapper = styled.div`
