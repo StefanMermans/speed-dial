@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   box-shadow: inset 0px 0px 200px 16px rgba(0,0,0,0.75);
   display: flex;
   flex-direction: column;
@@ -12,6 +11,7 @@ export const AppContainer = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  overflow-x: hidden;
   overflow-y: auto;
 `;
 
