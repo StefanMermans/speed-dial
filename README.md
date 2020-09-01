@@ -1,3 +1,5 @@
+![build-deploy](https://github.com/StefanMermans/speed-dial/workflows/build-deploy/badge.svg?branch=master)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
