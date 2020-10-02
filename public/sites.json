@@ -111,5 +111,11 @@
     "url": "https://genshin.gg/",
     "icon": "images/GenshinGG.png",
     "backgroundColor": "#222431"
+  },
+  {
+    "name": "Nyaa",
+    "url": "https://nyaa.si/",
+    "icon": "images/nyaa.png",
+    "backgroundColor": "#0084ff"
   }
 ]
