@@ -105,5 +105,11 @@
     "name": "Tabler icons",
     "url": "https://tablericons.com/",
     "icon": "images/tablericons.png"
+  },
+  {
+    "name": "Genshin GG",
+    "url": "https://genshin.gg/",
+    "icon": "images/GenshinGG.png",
+    "backgroundColor": "#ffffff"
   }
 ]
