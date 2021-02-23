@@ -1,10 +1,5 @@
 [
   {
-    "name": "Horriblesubs",
-    "url": "https://horriblesubs.info/#",
-    "icon": "images/horriblesubs.png"
-  },
-  {
     "name": "youtube",
     "url": "https://youtube.com",
     "icon": "images/youtube.png"
@@ -93,6 +88,12 @@
     "name": "E7 database",
     "url": "https://e7herder.com/",
     "icon": "images/iseria.png",
+    "backgroundColor": "#ffffff"
+  },
+  {
+    "name": "Chess",
+    "url": "https://chess.com",
+    "icon": "images/chess.png",
     "backgroundColor": "#ffffff"
   },
   {
