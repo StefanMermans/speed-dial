@@ -1,27 +1,30 @@
 import React from 'react';
-import { AppContainer, BottomWrapper } from "./styles";
 import SiteList from "../SiteList/SiteList"
 import background from "../../background-compressed.jpg"
 import Clock from '../Clock/Clock';
-import ShowList from '../ShowList/ShowList';
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
-const aniClient = new ApolloClient({
-  uri: "https://graphql.anilist.co/",
-  cache: new InMemoryCache(),
-});
+
+import styles from "./app.module.scss";
 
 function App() {
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+    console.log('Name: ' + profile.getName());
+    console.log('Image URL: ' + profile.getImageUrl());
+    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  }
+
   return (
-    <ApolloProvider client={aniClient}>
-      <AppContainer background={background}>
+      <div class={styles.appContainer} style={{
+        backgroundImage: `url(${background})`
+      }}>
+        <div class="g-signin2" data-onsuccess={onSignIn}></div>
         <SiteList />
-        <BottomWrapper>
+        <div class={styles.bottomWrapper}>
           <Clock />
-          {/* <ShowList /> */}
-        </BottomWrapper>
-      </AppContainer>
-    </ApolloProvider>
+        </div>
+      </div>
   );
 }
 

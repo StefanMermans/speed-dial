@@ -1,6 +1,6 @@
 import React from "react";
-import { Thumbnail, Text, Content } from "./styles";
 
+import styles from "./showItem.module.scss";
 
 export default function ShowItem({ media }) {
   const next = media.nextAiringEpisode.airingAt * 1000;
@@ -21,12 +21,12 @@ export default function ShowItem({ media }) {
   }
 
   return (
-    <Content>
-      <Thumbnail src={media.coverImage.medium} />
-      <Text>
+    <div class={styles.content}>
+      <div class={styles.thumbnail} src={media.coverImage.medium} />
+      <div class={styles.text}>
         <div>{media.title.english}</div>
         <div>{nextDate.toISOString()}</div>
-      </Text>
-    </Content>
+      </div>
+    </div>
   )
 }

@@ -1,7 +1,8 @@
-import React, { useState, useMemo } from "react";
-import { ShowListWrapper } from "./styles";
+import React, { useMemo } from "react";
 import ShowItem from "./ShowItem/ShowItem";
 import { useQuery, gql } from "@apollo/client"
+
+import styles from "./showList.module.scss";
 
 const QUERY = gql`
 query ($name: String = "Skyflyer97") {
@@ -102,7 +103,7 @@ export default function ShowList() {
   }, [loading, error, data]);
 
   return (
-    <ShowListWrapper>
+    <div class={styles.showListWrapper}>
       <div>Today</div>
       {todayList && todayList.map(media => <ShowItem key={media.id} media={media} />)}
       <div>Tomorrow</div>
@@ -111,6 +112,6 @@ export default function ShowList() {
       {laterList && laterList.map(media => <ShowItem key={media.id} media={media} />)}
       <div>Finished</div>
       {finishedList && finishedList.map(media => <ShowItem key={media.id} media={media} />)}
-    </ShowListWrapper>
+    </div>
   );
 }

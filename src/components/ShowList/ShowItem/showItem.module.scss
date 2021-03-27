@@ -1,6 +1,4 @@
-import styled from "styled-components";
-
-export const Content = styled.div`
+.content {
   background-color: white;
   box-sizing: border-box;
   border-radius: 10px;
@@ -12,17 +10,17 @@ export const Content = styled.div`
   &:first-child {
     margin-top: 0;
   }
-`;
+}
 
-export const Text = styled.div`
+.text {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
   justify-content: center;
-`;
+}
 
-export const Thumbnail = styled.img`
+.thumbnail {
   height: 100%;
   width: 60px;
   object-fit: cover;
-`;
+}
