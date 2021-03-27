@@ -19,7 +19,7 @@ function App() {
       <div class={styles.appContainer} style={{
         backgroundImage: `url(${background})`
       }}>
-        <div class="g-signin2" data-onsuccess={onSignIn}></div>
+        {/* <div class="g-signin2" data-onsuccess={onSignIn}></div> */}
         <SiteList />
         <div class={styles.bottomWrapper}>
           <Clock />
