@@ -15,7 +15,10 @@ export const AppContainer = styled.div`
   overflow-y: auto;
 `;
 
-export const ClockWrapper = styled.div`
+export const BottomWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
   padding: 50px;
   box-sizing: border-box;
+  height: 35%;
 `;
