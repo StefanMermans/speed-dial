@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Container, Time, DateContainer } from "./styles";
 import { DAYS, MONTHS } from "../../constants"
+import styles from "./clock.module.scss";
 
 export default function Clock() {
   const [time, setTime] = useState(new Date());
@@ -21,9 +21,9 @@ export default function Clock() {
   const clockContent = `${DAYS[time.getDay()]}, ${time.getDate()} ${MONTHS[time.getMonth()]} `;
 
   return (
-    <Container>
-      <Time>{timeString}</Time>
-      <DateContainer>{clockContent}</DateContainer>
-    </Container>
+    <div class={styles.container}>
+      <div class={styles.time}>{timeString}</div>
+      <div class={styles.dateContainer}>{clockContent}</div>
+    </div>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useMemo, useState, useEffect } from "react";
 import Site from "../Site/Site";
 import useWindowResize from "../../hooks/useWindowResize";
-import { Container } from "./styles";
+
+import styles from "./siteList.module.scss";
 
 const BOOKMARK_WIDTH = 120;
 
@@ -31,10 +32,10 @@ export default function SiteList() {
   }, [windowWidth]);
   
   return (
-    <Container style={{
+    <div class={styles.container} style={{
       paddingLeft: paddingLeft
     }}>
       {content}
-    </Container>
+    </div>
   )
 }

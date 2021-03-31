@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Icon, Link } from "./styles";
+
+import styles from "./site.module.scss";
 
 export default function Site(props) {
   const imageSource = props.site.icon;
@@ -7,10 +8,10 @@ export default function Site(props) {
   const color = props.site.color || "black"
 
   return (
-    <Container color={color}>
-      <Link href={props.site.url} backgroundColor={backgroundColor}>
-        <Icon src={imageSource} alt={props.site.name + "-icon"} />
-      </Link>
-    </Container>
+    <div class={styles.container} style={{color}}>
+      <a class={styles.link} href={props.site.url} style={{backgroundColor}}>
+        <img class={styles.icon} src={imageSource} alt={props.site.name + "-icon"} />
+      </a>
+    </div>
   )
 }
