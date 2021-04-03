@@ -21,9 +21,9 @@ export default function Clock() {
   const clockContent = `${DAYS[time.getDay()]}, ${time.getDate()} ${MONTHS[time.getMonth()]} `;
 
   return (
-    <div class={styles.container}>
-      <div class={styles.time}>{timeString}</div>
-      <div class={styles.dateContainer}>{clockContent}</div>
+    <div className={styles.container}>
+      <div className={styles.time}>{timeString}</div>
+      <div className={styles.dateContainer}>{clockContent}</div>
     </div>
   );
 }

@@ -16,12 +16,12 @@ function App() {
   // }
 
   return (
-      <div class={styles.appContainer} style={{
+      <div className={styles.appContainer} style={{
         backgroundImage: `url(${background})`
       }}>
         {/* <div class="g-signin2" data-onsuccess={onSignIn}></div> */}
         <SiteList />
-        <div class={styles.bottomWrapper}>
+        <div className={styles.bottomWrapper}>
           <Clock />
         </div>
       </div>

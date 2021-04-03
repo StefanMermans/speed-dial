@@ -1,8 +1,8 @@
-import React, { useMemo, useState, useEffect } from "react";
-import Site from "../Site/Site";
+import React, { useMemo } from "react";
 import useWindowResize from "../../hooks/useWindowResize";
 
 import styles from "./siteList.module.scss";
+import useSiteList from "./useSiteList";
 
 const BOOKMARK_WIDTH = 120;
 
@@ -14,28 +14,18 @@ function calculatePadding(windowWidth) {
 }
 
 export default function SiteList() {
-  const [sites, setSites] = useState([]);
   const [windowWidth] = useWindowResize();
-
-  useEffect(() => {
-    fetch("sites.json").then(async res => {
-      setSites(await res.json());
-    });
-  }, []);
-
-  const content = useMemo(() => {
-    return sites.map(site => <Site key={site.name} site={site}/>)
-  }, [sites]);
+  const sites = useSiteList();
 
   const paddingLeft = useMemo(() => {
     return calculatePadding(windowWidth);
   }, [windowWidth]);
   
   return (
-    <div class={styles.container} style={{
+    <div className={styles.container} style={{
       paddingLeft: paddingLeft
     }}>
-      {content}
+      {sites}
     </div>
   )
 }
