@@ -1,7 +1,7 @@
 import Site from "../Site/Site";
 import React, { useState, useEffect, useMemo } from "react";
 import { client } from "../../gqlClient";
-import { gql } from "@apollo/client";
+import { gql } from "graphql-request";
 
 export default function useSiteList() {
   const [sites, setSites] = useState([]);
