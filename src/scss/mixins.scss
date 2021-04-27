@@ -1,0 +1,20 @@
+@import "./constants.scss";
+@import "./colors.scss";
+
+@mixin boxShadow {
+  box-shadow: 0 2px 3px 0px #0000004d;
+}
+
+@mixin foregroundElement {
+  @include boxShadow;
+  background-color: $foregroundColor;
+  padding: $padding;
+  color: $textColor;
+  border-radius: $borderRadius;
+}
+
+@mixin background {
+  width: 100vw;
+  height: 100vh;
+  background-color: $backgroundColor;
+}

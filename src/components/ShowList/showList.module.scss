@@ -1,18 +1,7 @@
-.showListWrapper {
-  color: black;
-  width: 70%;
-  max-width: 70%;
-  flex-grow: 0;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  /* justify-content: flex-end; */
-  padding-left: 50px;
+@import "../../scss/colors.scss";
+@import "../../scss/mixins.scss";
 
-  /* Hide scrollbar */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-  &::-webkit-scrollbar {
-    display: none;
-  }
+
+.showListWrapper {
+  @include background;
 }

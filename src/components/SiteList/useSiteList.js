@@ -5,6 +5,8 @@ import { gql } from "graphql-request";
 
 export default function useSiteList() {
   const [sites, setSites] = useState([]);
+  console.log('useSiteList');
+  console.log({...client});
 
   useEffect(() => {
     client.request(
@@ -17,7 +19,11 @@ export default function useSiteList() {
             icon
           }
         }
-      `
+      `,
+      {},
+      {
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+      }
     ).then(data => setSites(data.sites));
   }, []);
 

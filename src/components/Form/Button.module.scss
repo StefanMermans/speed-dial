@@ -1,0 +1,26 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/colors.scss";
+
+.button {
+  @include boxShadow;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: $buttonColor;
+  color: $textColor;
+  padding: 10px;
+
+  &:hover {
+    background-color: lighten($buttonColor, 3%);
+  }
+
+  &:active {
+    background-color: lighten($buttonColor, 7%);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid #36384A;
+  }
+}

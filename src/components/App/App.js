@@ -2,8 +2,10 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import SpeedDial from '../SpeedDial/SpeedDials';
+import ShowList from "../ShowList/ShowList";
 
 import styles from "./app.module.scss";
+import "./global.scss";
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
       <Switch>
         <Route path="/login">
           <Login />
+        </Route>
+        <Route path="/shows">
+          <ShowList />
         </Route>
         <Route path="/">
           <SpeedDial />
