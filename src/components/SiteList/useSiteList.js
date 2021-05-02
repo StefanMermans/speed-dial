@@ -25,8 +25,8 @@ export default function useSiteList() {
         "Authorization": `Bearer ${localStorage.getItem("token")}`
       }
     ).then(data => setSites(data.sites))
-    .catch(() => history.push('/loing'));
-  }, []);
+    .catch(() => history.push('/login'));
+  }, [history]);
 
   return useMemo(() => {
     return sites.map(site => <Site key={site.name} site={site} />)
