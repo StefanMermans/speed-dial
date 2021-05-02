@@ -10,8 +10,6 @@ import styles from "./SpeedDial.module.scss";
 export default function SpeedDial() {
   const [shows, areShowLoading] = useShows();
 
-  console.log(shows);
-
   return (
     <div className={styles.appContainer} style={{
       backgroundImage: `url(${background})`
@@ -19,7 +17,7 @@ export default function SpeedDial() {
       <SiteList />
       <div className={styles.bottomWrapper}>
         <Clock />
-        <div>
+        <div className={styles.showList}>
           {areShowLoading || shows.map(show => <ShowItem key={show.media.id} show={show} />)}
         </div>
       </div>

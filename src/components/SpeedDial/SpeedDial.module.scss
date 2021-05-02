@@ -1,10 +1,11 @@
+@import "../../scss/defaultImports.scss";
+
 .appContainer {
   width: 100vw;
   height: 100vh;
   box-shadow: inset 0px 0px 200px 16px rgba(0,0,0,0.75);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -18,4 +19,14 @@
   padding: 50px;
   box-sizing: border-box;
   height: 35%;
+  flex-grow: 1;
+  align-items: flex-end;
+}
+
+.showList {
+  @include simpleScroll;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(min(100%, 600px));
 }

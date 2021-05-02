@@ -57,7 +57,22 @@ function useQuery() {
 }
 
 function showSort(showA, showB) {
-  return showB.episodesToWatch() - showA.episodesToWatch();
+  const aEps = showA.episodesToWatch();
+  const bEps = showB.episodesToWatch();
+
+  console.log(`${showA.media.title.romaji} - ${showB.media.title.romaji}`)
+  console.log({aEps, bEps});
+
+  if (aEps !== 0 || bEps !== 0) {
+    return showB.episodesToWatch() - showA.episodesToWatch();
+  }
+
+  const [nextA] = showA.getNextEpisode();
+  const [nextB] = showB.getNextEpisode();
+  console.log("next ep");
+  console.log(nextA.timeUntilAiring, nextB.timeUntilAiring);
+
+  return nextA.timeUntilAiring - nextB.timeUntilAiring;
 }
 
 function toModel(show) {

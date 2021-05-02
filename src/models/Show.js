@@ -8,18 +8,16 @@ export default class Show {
   }
 
   getReleasingContent() {
-    const [nextEpisode] = this.getNextEpisode(this);
+    const [nextEpisode] = this.getNextEpisode();
   
     if (nextEpisode.timeUntilAiring > 0) {
       return this.formatNextEpTime(...this.secondsToDaysHours(nextEpisode.timeUntilAiring));
     } else {
-      const eps = this.airedEpisodes(this);
+      const eps = this.airedEpisodes();
   
       return this.formatEpsToWatch(eps.length - this.progress);
     }
   }
-
-
 
   getFinishedContent() {
     return this.formatEpsToWatch(this.media.episodes - this.progress);
@@ -43,7 +41,7 @@ export default class Show {
   episodesToWatch() {
     switch (this.media.status) {
       case "RELEASING":
-        return this.media.airingSchedule.length - this.progress;
+        return this.airedEpisodes().length - this.progress;
       case "FINISHED":
         default:
         return this.media.episodes - this.progress;

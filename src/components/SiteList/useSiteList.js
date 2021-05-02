@@ -5,8 +5,6 @@ import { gql } from "graphql-request";
 
 export default function useSiteList() {
   const [sites, setSites] = useState([]);
-  console.log('useSiteList');
-  console.log({...client});
 
   useEffect(() => {
     client.request(
