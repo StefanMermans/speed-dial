@@ -60,9 +60,6 @@ function showSort(showA, showB) {
   const aEps = showA.episodesToWatch();
   const bEps = showB.episodesToWatch();
 
-  console.log(`${showA.media.title.romaji} - ${showB.media.title.romaji}`)
-  console.log({aEps, bEps});
-
   if (aEps !== 0 || bEps !== 0) {
     return showB.episodesToWatch() - showA.episodesToWatch();
   }
