@@ -8,8 +8,10 @@ export default function ShowList() {
   const [shows] = useShows();
 
   return (
-    <div className={styles.showListWrapper}>
-      {shows.map(show => <ShowItem key={show.media.id} show={show} />)}
+    <div className={styles.showListPage}>
+      <div className={styles.showListWrapper}>
+        {shows.map(show => <ShowItem key={show.media.id} show={show} />)}
+      </div>
     </div>
   );
 }

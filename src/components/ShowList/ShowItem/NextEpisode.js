@@ -1,31 +1,29 @@
 import React, { useMemo } from "react";
-import useNextEpisode from "./useNextEpisode";
+
+import styles from "./NextEpisode.module.scss";
+
+function useContent(show) {
+  return useMemo(() => {
+    return show.formatContent();
+  }, [show]);
+}
+
+function useProgressText(show) {
+  return `seen: ${show.progress} episodes`;
+}
 
 export default function NextEpisode({ show }) {
-  const [nextEpisode] = useNextEpisode(show);
-
-  const content = useMemo(() => {
-    if (!nextEpisode) {
-      return "";
-    }
-
-    console.log(nextEpisode);  
-    
-    if (nextEpisode.timeUntilAiring > 0) {
-      const time = nextEpisode.timeUntilAiring
-      let minutes = time / 60;
-      let hours = minutes / 60;
-      let days = hours / 24;
-      let daysFloor = Math.floor(days);
-      let hoursMod = Math.round(hours % 24);
-      
-      return `${daysFloor} days ${hoursMod} hours`;
-    }
-  }, [nextEpisode])
+  const content = useContent(show);
+  const progressText = useProgressText(show);
 
   return (
-    <div>
-      {content}
+    <div className={styles.container}>
+      <div>
+        {progressText}
+      </div>
+      <div>
+        {content}
+      </div>
     </div>
   )
 }

@@ -14,7 +14,16 @@
 }
 
 @mixin background {
+  box-sizing: border-box;
+  padding: $padding 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: $backgroundColor;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin pageContent {
+  max-width: 1000px;
+  flex-basis: 100%;
 }

@@ -4,4 +4,25 @@
 
 .showItem {
   @include foregroundElement;
+  display: flex;
+  margin-bottom: $padding;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.romaji {
+
+}
+
+.english {
+  font-size: 0.8rem;
 }
