@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../Form/Button";
 import FormInput from "../Form/FormInput";
-import Input from "../Form/Input";
 
 import styles from  "./login.module.scss";
 
@@ -26,10 +25,7 @@ export default function Login() {
       body: JSON.stringify({
         username,
         password,
-      }),
-      headers: {
-        ["Content-Type"]: "application/json"
-      }
+      })
     });
     const body = await response.json();
     localStorage.setItem('token', body.token);    

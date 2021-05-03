@@ -4,6 +4,6 @@ import styles from "./thumbnail.module.scss";
 
 export default function ThumbNail({ show }) {
   return (
-      <img className={styles.thumbnail} src={show.media.coverImage.medium}/>
+      <img alt={show.media.title.romaji} className={styles.thumbnail} src={show.media.coverImage.medium}/>
   )
 }

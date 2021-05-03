@@ -4,7 +4,7 @@ import Login from '../Login/Login';
 import SpeedDial from '../SpeedDial/SpeedDials';
 import ShowList from "../ShowList/ShowList";
 
-import styles from "./app.module.scss";
+import "./app.module.scss";
 import "./global.scss";
 
 function App() {
