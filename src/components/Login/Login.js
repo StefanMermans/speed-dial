@@ -20,12 +20,15 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
       method: "POST",
       body: JSON.stringify({
         username,
         password,
-      })
+      }),
+      headers: {
+        "Content-type": "application/json"
+      }
     });
     const body = await response.json();
     localStorage.setItem('token', body.token);    
