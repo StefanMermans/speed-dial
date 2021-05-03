@@ -26,7 +26,10 @@ export default function useSiteList() {
       {
         "Authorization": `Bearer ${localStorage.getItem("token")}`
       }
-    ).then(data => setSites(data.sites));
+    ).then(data => setSites(data.sites)).catch((reason) => {
+      console.log(".catch")
+      history.push('/login');
+    });
   } catch (error) {
     history.push('/login');
   }
