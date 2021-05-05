@@ -3,9 +3,9 @@ import NextEpisode from "./NextEpisode";
 import styles from "./showItem.module.scss";
 import ThumbNail from "./thumbnail";
 
-export default function ShowItem({ show }) {
+export default function ShowItem({ show, compact }) {
   return (
-    <div className={styles.showItem}>
+    <div className={`${styles.showItem} ${compact ? styles.compact : ''}`}>
       <ThumbNail show={show} />
       <div className={styles.content}>
         <div>

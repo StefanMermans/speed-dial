@@ -10,12 +10,28 @@
   &:last-child {
     margin-bottom: 0;
   }
+
+  &.compact {
+    overflow: hidden;
+    padding: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+
+    &:first-child {
+      border-radius: $borderRadius $borderRadius 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 $borderRadius $borderRadius;
+    }
+  }
 }
 
 .content {
   display: flex;
   justify-content: space-between;
-  padding-left: 10px;
+  padding: 0 10px;
+  align-items: center;
   width: 100%;
 }
 
