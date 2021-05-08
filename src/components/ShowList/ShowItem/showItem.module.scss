@@ -3,7 +3,11 @@
 @import "../../../scss/colors.scss";
 
 .showItem {
-  @include foregroundElement;
+  @include boxShadow;
+
+  padding: $padding;
+  background-color: $backgroundColor3;
+  border-radius: $borderRadius;
   display: flex;
   margin-bottom: $padding;
 
