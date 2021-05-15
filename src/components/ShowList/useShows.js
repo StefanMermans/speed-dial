@@ -66,8 +66,6 @@ function showSort(showA, showB) {
 
   const [nextA] = showA.getNextEpisode();
   const [nextB] = showB.getNextEpisode();
-  console.log("next ep");
-  console.log(nextA.timeUntilAiring, nextB.timeUntilAiring);
 
   return nextA.timeUntilAiring - nextB.timeUntilAiring;
 }

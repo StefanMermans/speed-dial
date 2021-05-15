@@ -23,13 +23,13 @@ export default function SpeedDialShows() {
   }
 
   return (
-    <div className={styles.showList}>
+    <div className={`${styles.showList} ${areShowLoading ? styles.hidden : ''}`}>
       {areShowLoading || 
       <> 
         {shows.map(show => <ShowItem compact key={show.media.id} show={show} />)}
-          <div className={styles.showMore} onClick={handleShowMoreShows}>Show more</div>
       </>
       }
+      <div className={styles.showMore} onClick={handleShowMoreShows}>Show more</div>
     </div>
   );
 }

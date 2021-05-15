@@ -6,6 +6,11 @@
   display: flex;
   flex-direction: column;
   max-height: calc(min(100%, 300px));
+  transition: transform 75ms ease-out;
+  
+  &.hidden {
+    transform: translateY(300px);
+  }
 }
 
 .showMore {
