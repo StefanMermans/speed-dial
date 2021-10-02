@@ -1,0 +1,16 @@
+@import "../../scss/defaultImports.scss";
+
+.settingsWrapper {
+  @include pageContent;
+}
+
+.settingsPage {
+  @include background;
+}
+
+.settingsContent {
+  @include boxShadow;
+  
+  background-color: $backgroundColor3;
+  padding: $padding;
+}

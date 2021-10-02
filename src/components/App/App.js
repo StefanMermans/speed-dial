@@ -6,6 +6,7 @@ import ShowList from "../ShowList/ShowList";
 
 import "./app.module.scss";
 import "./global.scss";
+import { Settings } from '../Settings/Settings';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route path="/shows">
           <ShowList />
+        </Route>
+        <Route path="/settings">
+          <Settings />
         </Route>
         <Route path="/">
           <SpeedDial />
