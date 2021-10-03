@@ -1,25 +1,20 @@
-import React, {useMemo} from "react";
+import React from "react";
+
+import Site from "../Site/Site";
+import useSiteList from "../../hooks/useSiteList";
 
 import styles from "./siteList.module.scss";
-import useSiteList from "../../hooks/useSiteList";
-import Site from "../Site/Site";
 
 export const BOOKMARK_WIDTH = 120;
 
-const useFormatSiteList = (sites) => {
-  return useMemo(() => {
-    return sites.map(site => <Site key={site.name} site={site} />)
-  }, [sites]);
-}
-
 export default function SiteList({paddingLeft}) {
-  const sites = useFormatSiteList(useSiteList());
+  const sites = useSiteList();
   
   return (
     <div className={styles.container} style={{
       paddingLeft: paddingLeft
     }}>
-      {sites}
+      {sites.map(site => <Site key={site.name} site={site} />)}
     </div>
   )
 }

@@ -1,23 +1,24 @@
-import { gql } from "graphql-request";
-import React, { useEffect, useState } from "react";
-import { client } from "../../gqlClient";
+import React, {useEffect, useState} from 'react';
 
-import useSiteList from "../../hooks/useSiteList";
-import { getAuthHeader } from "../../utils/utils";
-import Button from "../Form/Button";
+import {gql} from 'graphql-request';
 
-import styles from "./settings.module.scss";
+import Button from '../Form/Button';
+import {client} from '../../gqlClient';
+import useSiteList from '../../hooks/useSiteList';
+import {getAuthHeader} from '../../utils/utils';
+
+import styles from './settings.module.scss';
 
 const useSitesJson = () => {
-  const [sitesJson, setSitesJson] = useState("[]");
+  const [sitesJson, setSitesJson] = useState('[]');
   const sites = useSiteList();
 
   useEffect(() => {
     setSitesJson(JSON.stringify(sites));
-  }, [sites])
+  }, [sites]);
 
   return [sitesJson, setSitesJson];
-}
+};
 
 export const Settings = () => {
   const [sitesJson, setSitesJson] = useSitesJson();
@@ -27,31 +28,27 @@ export const Settings = () => {
       gql`
         mutation UpdateSites($sites: String!) {
           updateSites(sites: $sites) {
-            name,
+            name
           }
         }
       `,
       {sites: sitesJson},
       getAuthHeader(),
-    )
+    );
   };
 
   const handleChange = (event) => {
     setSitesJson(event.target.value);
-  }
+  };
 
   return (
     <div className={styles.settingsPage}>
       <div className={styles.settingsWrapper}>
         <div className={styles.settingsContent}>
-          <textarea
-            type="textarea"
-            value={sitesJson}
-            onChange={handleChange}
-          />
+          <textarea type="textarea" value={sitesJson} onChange={handleChange} />
           <Button onClick={handleSave}>Save</Button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

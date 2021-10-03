@@ -19,6 +19,10 @@ export default class Show {
     }
   }
 
+  getNotYetReleasedContent() {
+    return this.formatNextEpTime(...this.secondsToDaysHours(this.media.nextAiringEpisode.timeUntilAiring));
+  }
+
   getFinishedContent() {
     return this.formatEpsToWatch(this.media.episodes - this.progress);
   }
@@ -33,6 +37,8 @@ export default class Show {
         return this.getFinishedContent();
       case "RELEASING":
         return this.getReleasingContent();
+      case "NOT_YET_RELEASED":
+        return this.getNotYetReleasedContent();
       default:
         return `Unknown media status: ${this.media.status}`
     }

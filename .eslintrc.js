@@ -4,6 +4,7 @@ module.exports = {
         "es2020": true
     },
     "extends": [
+        "prettier",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:react-hooks/recommended"
@@ -16,12 +17,12 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
     ],
     "rules": {
         "react-hooks/exhaustive-deps": "warn",
 
-        "react/prop-types": "off"
+        "react/prop-types": "off",
     },
     "globals": {
         "process": false,
