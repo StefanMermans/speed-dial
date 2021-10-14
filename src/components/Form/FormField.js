@@ -1,7 +1,5 @@
 import React from "react";
 
-import cn from "classnames";
-
 import styles from  "./FormField.module.scss";
 
 export default function FormField({ label, children }) {
