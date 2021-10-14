@@ -1,0 +1,17 @@
+.page {
+  @apply
+    h-screen
+  bg-gray-1
+    p-8
+    flex
+    justify-center
+}
+
+.page-content {
+  @apply
+    rounded-md
+    bg-gray-2
+    max-w-3xl
+    w-full
+    p-4;
+}

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+
 import { useHistory } from "react-router-dom";
+
 import Button from "../Form/Button";
 import FormInput from "../Form/FormInput";
-
-import styles from  "./login.module.scss";
 
 export default function Login() {
   const history = useHistory();
@@ -36,8 +36,8 @@ export default function Login() {
   }
 
   return (
-    <div className={styles.loginWrapper}>
-      <form onSubmit={handleLogin} className={styles.loginForm}>
+    <div className="page flex justify-center items-center">
+      <form onSubmit={handleLogin} className="bg-gray-2 p-4 rounded-md flex flex-col gap-4 w-full max-w-md">
         <h1>Login</h1>
         <FormInput
           label="username"
@@ -47,7 +47,7 @@ export default function Login() {
             type: "user",
             name: "username",
           }}
-        />
+          />
         <FormInput
           label="password"
           inputProps={{
@@ -57,7 +57,9 @@ export default function Login() {
             type: "password",
           }}
         />
-        <Button type="submit">Login</Button>
+        <div>
+          <Button variant="primary" type="submit">Login</Button>
+        </div>
       </form>
     </div>
   );

@@ -24,7 +24,7 @@ export default function useSiteList() {
       {
         "Authorization": `Bearer ${localStorage.getItem("token")}`
       }
-      ).then(data => setSites(data.sites)).catch((reason) => {
+      ).then(data => setSites(data.sites)).catch(() => {
         history.push('/login');
       });
     } catch (error) {
