@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {Input} from '../../components/Form/Input';
 import {Divider} from '../../components/Divider/Divider';
 

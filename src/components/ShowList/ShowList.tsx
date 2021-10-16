@@ -1,5 +1,3 @@
-import React from "react";
-
 import useShows from "./useShows";
 import {ShowItem} from "./ShowItem/ShowItem";
 

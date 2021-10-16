@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {Divider} from '../../components/Divider/Divider';
 import {RadioButton} from '../../components/Form/RadioButton';
 

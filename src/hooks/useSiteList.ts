@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { client } from "../gqlClient";
+
 import { gql } from "graphql-request";
 import { useHistory } from "react-router-dom";
+
+import { client } from "../gqlClient";
 
 export default function useSiteList(): any[] {
   const [sites, setSites] = useState<any[]>([]);

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 
 import Clock from '../Clock/Clock';
 import background from "../../background-compressed.jpg"

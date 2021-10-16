@@ -3,6 +3,11 @@ module.exports = {
     "browser": true,
     "es2020": true,
   },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "parser": "@typescript-eslint/parser",
   "extends": [
     "prettier",
@@ -29,6 +34,8 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["warn"],
     
     "react/prop-types": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
   },
   "globals": {
     "process": false,
