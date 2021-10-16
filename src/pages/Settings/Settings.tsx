@@ -1,51 +1,11 @@
-import React, {Dispatch, useEffect, useState} from 'react';
-
-import {gql} from 'graphql-request';
-
-import {client} from '../../gqlClient';
-import {getAuthHeader} from '../../utils/utils';
-import useSiteList from '../../hooks/useSiteList';
-import {Button} from '../../components/Form/Button';
-
-const useSitesJson = (): [string, Dispatch<string>] => {
-  const [sitesJson, setSitesJson] = useState('[]');
-  const sites = useSiteList();
-
-  useEffect(() => {
-    setSitesJson(JSON.stringify(sites));
-  }, [sites]);
-
-  return [sitesJson, setSitesJson];
-};
+import {SpeedDialEditor} from '../../components/SpeedDialEditor/SpeedDialEditor';
 
 export const Settings = () => {
-  const [sitesJson, setSitesJson] = useSitesJson();
-
-  const handleSave = () => {
-    client.request(
-      gql`
-        mutation UpdateSites($sites: String!) {
-          updateSites(sites: $sites) {
-            name
-          }
-        }
-      `,
-      {sites: sitesJson},
-      getAuthHeader(),
-    );
-  };
-
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setSitesJson(event.target.value);
-  };
-
   return (
     <div className='page items-start'>
       <div className='page-content'>
-        <textarea value={sitesJson} onChange={handleChange} />
-        <Button onClick={handleSave} variant='primary'>
-          Save
-        </Button>
+        <h1 className='mb-4'>Settings</h1>
+        <SpeedDialEditor />
       </div>
     </div>
   );
