@@ -43,7 +43,7 @@ export const Login: React.FC = () => {
       >
         <h1>Login</h1>
         <FormInput
-          label='username'
+          label='Username'
           inputProps={{
             onChange: handleUsernameChanged,
             value: username,
@@ -52,7 +52,7 @@ export const Login: React.FC = () => {
           }}
         />
         <FormInput
-          label='password'
+          label='Password'
           inputProps={{
             name: 'password',
             value: password,

@@ -33,11 +33,14 @@ export default function SpeedDialShows() {
       {areShowLoading || (
         <>
           {shows.map((show: Show) => (
-            <ShowItem compact key={show.media.id} show={show} />
+            <ShowItem key={show.media.id} show={show} />
           ))}
         </>
       )}
-      <div className={styles.showMore} onClick={handleShowMoreShows}>
+      <div
+        className='flex justify-center cursor-pointer'
+        onClick={handleShowMoreShows}
+      >
         Show more
       </div>
     </div>

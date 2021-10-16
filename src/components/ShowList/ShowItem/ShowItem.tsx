@@ -4,21 +4,18 @@ import {ThumbNail} from './thumbnail';
 import Show from '../../../models/Show';
 import {NextEpisode} from './NextEpisode';
 
-import styles from './showItem.module.scss';
-
 interface props {
   show: Show;
-  compact?: boolean;
 }
 
-export const ShowItem: React.FC<props> = ({show, compact}) => {
+export const ShowItem: React.FC<props> = ({show}) => {
   return (
-    <div className={`${styles.showItem} ${compact ? styles.compact : ''}`}>
+    <div className='bg-gray-2 flex'>
       <ThumbNail show={show} />
-      <div className={styles.content}>
+      <div className='flex justify-between px-4 items-center w-full'>
         <div>
-          <div className={styles.romaji}>{show.media.title.romaji}</div>
-          <div className={styles.english}>{show.media.title.english}</div>
+          <div>{show.media.title.romaji}</div>
+          <div className='text-sm'>{show.media.title.english}</div>
         </div>
         <NextEpisode show={show} />
       </div>
