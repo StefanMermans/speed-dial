@@ -5,6 +5,7 @@
     p-8
     flex
     justify-center
+    overflow-auto;
 }
 
 .page-content {
@@ -13,5 +14,6 @@
     bg-gray-2
     max-w-3xl
     w-full
+    h-auto
     p-4;
 }
