@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Divider from '../../components/Divider/Divider';
+import {Divider} from '../../components/Divider/Divider';
 
 export default function HeaderComponents() {
   return (

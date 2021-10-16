@@ -1,5 +1,8 @@
 export default class Show {
-  formatNextEpTime(days, hours) {
+  media: any;
+  progress: any;
+
+  formatNextEpTime(days: number, hours: number) {
     if (days <= 0) {
       return `Next episode in: ${hours} hours`;
     }
@@ -27,7 +30,7 @@ export default class Show {
     return this.formatEpsToWatch(this.media.episodes - this.progress);
   }
 
-  formatEpsToWatch(episodes) {
+  formatEpsToWatch(episodes: number) {
     return `${episodes} episodes to watch`;
   }
   
@@ -66,7 +69,7 @@ export default class Show {
     return [null, -1];
   }
 
-  secondsToDaysHours(time) {
+  secondsToDaysHours(time: number): [number, number] {
     let minutes = time / 60;
     let hours = minutes / 60;
     let days = hours / 24;
@@ -77,6 +80,6 @@ export default class Show {
   }
 
   airedEpisodes() {
-    return this.media.airingSchedule.nodes.filter(scheduled => scheduled.timeUntilAiring < 0);
+    return this.media.airingSchedule.nodes.filter((scheduled: any) => scheduled.timeUntilAiring < 0);
   }
 }

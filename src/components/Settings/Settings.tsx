@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {Dispatch, useEffect, useState} from 'react';
 
 import {gql} from 'graphql-request';
 
-import Button from '../Form/Button';
+import {Button} from '../Form/Button';
 import {client} from '../../gqlClient';
-import useSiteList from '../../hooks/useSiteList';
 import {getAuthHeader} from '../../utils/utils';
+import useSiteList from '../../hooks/useSiteList';
 
 import styles from './settings.module.scss';
 
-const useSitesJson = () => {
+const useSitesJson = (): [string, Dispatch<string>] => {
   const [sitesJson, setSitesJson] = useState('[]');
   const sites = useSiteList();
 
@@ -37,7 +37,7 @@ export const Settings = () => {
     );
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setSitesJson(event.target.value);
   };
 
@@ -45,7 +45,7 @@ export const Settings = () => {
     <div className={styles.settingsPage}>
       <div className={styles.settingsWrapper}>
         <div className={styles.settingsContent}>
-          <textarea type="textarea" value={sitesJson} onChange={handleChange} />
+          <textarea value={sitesJson} onChange={handleChange} />
           <Button onClick={handleSave}>Save</Button>
         </div>
       </div>

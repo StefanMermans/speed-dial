@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Input from '../../components/Form/Input';
-import Divider from '../../components/Divider/Divider';
+import {Input} from '../../components/Form/Input';
+import {Divider} from '../../components/Divider/Divider';
 
 export default function InputComponents() {
   return (

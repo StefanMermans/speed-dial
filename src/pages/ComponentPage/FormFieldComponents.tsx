@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Input from '../../components/Form/Input';
-import Divider from '../../components/Divider/Divider';
-import FormField from '../../components/Form/FormField';
+import {Input} from '../../components/Form/Input';
+import {Divider} from '../../components/Divider/Divider';
+import {FormField} from '../../components/Form/FormField';
 
 export default function FormFieldComponents() {
   return (

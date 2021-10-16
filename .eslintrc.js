@@ -1,31 +1,32 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2020": true
+  "env": {
+    "browser": true,
+    "es2020": true,
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "prettier",
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended"
-    ],
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-    ],
-    "rules": {
-        "react-hooks/exhaustive-deps": "warn",
+    "ecmaVersion": 11,
+    "sourceType": "module",
+  },
+  "plugins": [
+    "react",
+],
+  "rules": {
+    "react-hooks/exhaustive-deps": "warn",
 
-        "no-unused-vars": "warn",
-        "react/prop-types": "off",
-    },
-    "globals": {
-        "process": false,
-    }
+    "no-unused-vars": "warn",
+    "react/prop-types": "off",
+  },
+  "globals": {
+    "process": false,
+  },
 };

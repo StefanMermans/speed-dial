@@ -1,8 +1,9 @@
 import React from "react";
-import ShowItem from "./ShowItem/ShowItem";
+
+import useShows from "./useShows";
+import {ShowItem} from "./ShowItem/ShowItem";
 
 import styles from "./showList.module.scss";
-import useShows from "./useShows";
 
 export default function ShowList() {
   const [shows] = useShows();

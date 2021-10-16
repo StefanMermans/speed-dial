@@ -1,11 +1,15 @@
 import React from "react";
 
-import Site from "../Site/Site";
+import {Site} from "../Site/Site";
 import useSiteList from "../../hooks/useSiteList";
 
 export const BOOKMARK_WIDTH = 96 + 16;
 
-export default function SiteList({padding}) {
+interface props {
+  padding: number;
+}
+
+export const SiteList: React.FC<props> = ({padding}) => {
   const sites = useSiteList();
   
   return (

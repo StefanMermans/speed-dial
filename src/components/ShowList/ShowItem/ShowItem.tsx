@@ -1,11 +1,17 @@
 import React from 'react';
 
-import ThumbNail from './thumbnail';
-import NextEpisode from './NextEpisode';
+import {ThumbNail} from './thumbnail';
+import Show from '../../../models/Show';
+import {NextEpisode} from './NextEpisode';
 
 import styles from './showItem.module.scss';
 
-export default function ShowItem({show, compact}) {
+interface props {
+  show: Show;
+  compact?: boolean;
+}
+
+export const ShowItem: React.FC<props> = ({show, compact}) => {
   return (
     <div className={`${styles.showItem} ${compact ? styles.compact : ''}`}>
       <ThumbNail show={show} />

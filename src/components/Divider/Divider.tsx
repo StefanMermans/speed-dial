@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function Divider() {
+export const Divider: React.FC = () => {
   return <div className='w-full border-b border-gray-500'/>
 }

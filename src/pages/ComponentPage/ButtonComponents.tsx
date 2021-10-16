@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Button from "../../components/Form/Button";
-import Divider from '../../components/Divider/Divider';
+import {Button} from "../../components/Form/Button";
+import {Divider} from '../../components/Divider/Divider';
 
 export default function ButtonComponents() {
   return (

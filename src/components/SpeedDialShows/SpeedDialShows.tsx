@@ -2,12 +2,13 @@ import React, {useMemo} from 'react';
 
 import {useHistory} from 'react-router-dom';
 
+import Show from '../../models/Show';
 import useShows from '../ShowList/useShows';
-import ShowItem from '../../components/ShowList/ShowItem/ShowItem';
+import {ShowItem} from '../ShowList/ShowItem/ShowItem';
 
 import styles from './SpeedDialShows.module.scss';
 
-function useSpeedDialShows() {
+function useSpeedDialShows(): [Show[], boolean] {
   const [shows, areShowLoading] = useShows();
 
   const sliced = useMemo(() => {
@@ -31,7 +32,7 @@ export default function SpeedDialShows() {
     >
       {areShowLoading || (
         <>
-          {shows.map((show) => (
+          {shows.map((show: Show) => (
             <ShowItem compact key={show.media.id} show={show} />
           ))}
         </>

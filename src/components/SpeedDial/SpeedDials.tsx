@@ -4,7 +4,7 @@ import Clock from '../Clock/Clock';
 import background from "../../background-compressed.jpg"
 import useWindowResize from '../../hooks/useWindowResize';
 import SpeedDialShows from '../SpeedDialShows/SpeedDialShows';
-import SiteList, { BOOKMARK_WIDTH } from "../SiteList/SiteList"
+import { BOOKMARK_WIDTH, SiteList } from "../SiteList/SiteList"
 
 import styles from "./SpeedDial.module.scss";
 

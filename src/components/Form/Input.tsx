@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Input(props) {
+export const Input: React.FC<any> = (props) => {
   return (
     <input
       className="

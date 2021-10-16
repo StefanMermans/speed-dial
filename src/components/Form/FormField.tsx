@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function FormField({ label, children }) {
+interface props {
+  label: string;
+}
+
+export const FormField: React.FC<props> = ({ label, children }) => {
   return (
     <div className="flex flex-col">
       <label className="mb-4">{label}</label>

@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function Site(props) {
+interface props {
+  site: any;
+}
+
+export const Site: React.FC<props> = (props) => {
   const imageSource = props.site.icon;
   const backgroundColor = props.site.backgroundColor || "white";
 

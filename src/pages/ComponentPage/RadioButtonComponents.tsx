@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Divider from '../../components/Divider/Divider';
-import RadioButton from '../../components/Form/RadioButton';
+import {Divider} from '../../components/Divider/Divider';
+import {RadioButton} from '../../components/Form/RadioButton';
 
 export default function RadioButtonComponents() {
   return (

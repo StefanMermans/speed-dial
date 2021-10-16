@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import { DAYS, MONTHS } from "../../constants"
+
 import styles from "./clock.module.scss";
 
 export default function Clock() {
