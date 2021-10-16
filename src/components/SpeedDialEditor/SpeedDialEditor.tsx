@@ -7,6 +7,7 @@ import {SiteItem} from './SiteItem';
 import {Button} from '../Form/Button';
 import {Site} from '../../models/Site';
 import {client} from '../../gqlClient';
+import {DeleteModal} from './DeleteModal';
 import {getAuthHeader} from '../../utils/utils';
 import useSiteList from '../../hooks/useSiteList';
 
@@ -38,6 +39,7 @@ const useSites = (): [Site[], SetSites] => {
 export const SpeedDialEditor: React.FC<props> = () => {
   const [sites, setSites] = useSites();
   const history = useHistory();
+  const [deleteIndex, setDeleteIndex] = useState<number>(-1);
 
   const handleSave = () => {
     client.request(
@@ -60,17 +62,50 @@ export const SpeedDialEditor: React.FC<props> = () => {
   const handleSiteChange = (index: number, editedSite: Site) => {
     const newSites = sites.slice();
     newSites[index] = editedSite;
+
     setSites(newSites);
+  };
+
+  const handleAddSite = () => {
+    const newSites = sites.slice();
+    newSites.unshift({
+      url: '',
+      icon: '',
+      name: '',
+      backgroundColor: '#ffffff',
+    });
+
+    setSites(newSites);
+  };
+
+  const handleDelete = (index: number) => {
+    setDeleteIndex(index);
+  };
+
+  const handleCloseModal = () => {
+    setDeleteIndex(-1);
+  };
+
+  const handleConfirmDelete = () => {
+    const newSites = sites.slice();
+    newSites.splice(deleteIndex, 1);
+
+    setSites(newSites);
+    setDeleteIndex(-1);
   };
 
   return (
     <div>
-      <div className='flex gap-4 flex-col mb-4'>
+      <Button variant='primary' onClick={handleAddSite}>
+        Add
+      </Button>
+      <div className='flex gap-4 flex-col mb-4 mt-4'>
         {sites.map((site, index) => (
           <SiteItem
             site={site}
             index={index}
             key={site.url}
+            onDelete={handleDelete}
             onChange={handleSiteChange}
           />
         ))}
@@ -81,6 +116,11 @@ export const SpeedDialEditor: React.FC<props> = () => {
         </Button>
         <Button onClick={handleCancel}>Cancel</Button>
       </div>
+      <DeleteModal
+        onConfirm={handleConfirmDelete}
+        onCancel={handleCloseModal}
+        site={sites[deleteIndex] ?? undefined}
+      />
     </div>
   );
 };

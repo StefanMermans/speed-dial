@@ -40,11 +40,12 @@ export const Button: React.FC<props> = (props) => {
 
   return (
     <button
+      {...props}
       className={cn(
+        props.className ?? '',
         COLORS[variant](props.disabled),
         'flex rounded-md px-4 py-2 disabled:cursor-default',
       )}
-      {...props}
     >
       {props.children}
     </button>
