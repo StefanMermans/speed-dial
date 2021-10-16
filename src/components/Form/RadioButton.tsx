@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 interface props {
   name: string;
@@ -9,8 +9,8 @@ interface props {
 export const RadioButton: React.FC<props> = ({name, value, label}) => {
   return (
     <div className='flex gap-4 items-center'>
-      <input className='' id={value} type="radio" name={name} value={value} />
+      <input className='' id={value} type='radio' name={name} value={value} />
       <label htmlFor={value}>{label}</label>
     </div>
   );
-}
+};

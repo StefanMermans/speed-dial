@@ -7,11 +7,11 @@ export default function FormFieldComponents() {
     <div className='flex flex-col gap-4'>
       <h1>Form fields</h1>
       <Divider />
-      <FormField label="Label">
-        <Input placeholder="Test" />
+      <FormField label='Label'>
+        <Input placeholder='Test' />
       </FormField>
-      <FormField label="Label">
-        <Input placeholder="Test" />
+      <FormField label='Label'>
+        <Input placeholder='Test' />
       </FormField>
     </div>
   );

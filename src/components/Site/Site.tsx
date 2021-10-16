@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface props {
   site: any;
@@ -6,11 +6,11 @@ interface props {
 
 export const Site: React.FC<props> = (props) => {
   const imageSource = props.site.icon;
-  const backgroundColor = props.site.backgroundColor || "white";
+  const backgroundColor = props.site.backgroundColor || 'white';
 
   return (
     <a
-      className="
+      className='
       rounded-2xl
       w-24
       h-24
@@ -20,11 +20,11 @@ export const Site: React.FC<props> = (props) => {
       hover:scale-110
       transition-transform
       shadow-md
-      hover:shadow-xl"
+      hover:shadow-xl'
       style={{backgroundColor}}
       href={props.site.url}
     >
-      <img src={imageSource} className="w-full h-full" />
+      <img src={imageSource} className='w-full h-full' />
     </a>
-  )
-}
+  );
+};

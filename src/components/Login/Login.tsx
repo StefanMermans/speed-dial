@@ -1,66 +1,71 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
-import {useHistory} from "react-router-dom";
+import {useHistory} from 'react-router-dom';
 
-import {Button} from "../Form/Button";
-import {FormInput} from "../Form/FormInput";
+import {Button} from '../Form/Button';
+import {FormInput} from '../Form/FormInput';
 
 export const Login: React.FC = () => {
   const history = useHistory();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleUsernameChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
-  }
+  };
 
   const handlePasswordChanged = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPassword(e.target.value);
-  }
+  };
 
   const handleLogin = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
-      method: "POST",
+      method: 'POST',
       body: JSON.stringify({
         username,
         password,
       }),
       headers: {
-        "Content-type": "application/json"
-      }
+        'Content-type': 'application/json',
+      },
     });
     const body = await response.json();
-    localStorage.setItem('token', body.token);    
+    localStorage.setItem('token', body.token);
     history.push('/');
-  }
+  };
 
   return (
-    <div className="page flex justify-center items-center">
-      <form onSubmit={handleLogin} className="bg-gray-2 p-4 rounded-md flex flex-col gap-4 w-full max-w-md">
+    <div className='page flex justify-center items-center'>
+      <form
+        onSubmit={handleLogin}
+        className='bg-gray-2 p-4 rounded-md flex flex-col gap-4 w-full max-w-md'
+      >
         <h1>Login</h1>
         <FormInput
-          label="username"
+          label='username'
           inputProps={{
             onChange: handleUsernameChanged,
             value: username,
-            type: "user",
-            name: "username",
+            type: 'user',
+            name: 'username',
           }}
-          />
+        />
         <FormInput
-          label="password"
+          label='password'
           inputProps={{
-            name: "password",
+            name: 'password',
             value: password,
             onChange: handlePasswordChanged,
-            type: "password",
+            type: 'password',
           }}
         />
         <div>
-          <Button variant="primary" type="submit">Login</Button>
+          <Button variant='primary' type='submit'>
+            Login
+          </Button>
         </div>
       </form>
     </div>
   );
-}
+};

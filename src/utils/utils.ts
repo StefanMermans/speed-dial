@@ -1,3 +1,3 @@
 export const getAuthHeader = (): any => {
-  return {Authorization: `Bearer ${localStorage.getItem("token")}`};
-}
+  return {Authorization: `Bearer ${localStorage.getItem('token')}`};
+};

@@ -1,4 +1,4 @@
-import {Button} from "../../components/Form/Button";
+import {Button} from '../../components/Form/Button';
 import {Divider} from '../../components/Divider/Divider';
 
 export default function ButtonComponents() {
@@ -8,18 +8,12 @@ export default function ButtonComponents() {
       <Divider />
       <div className='flex gap-4 flex-col'>
         <div className='flex gap-4'>
-          <Button>
-            Button
-          </Button>
-          <Button disabled>
-            Disabled
-          </Button>
+          <Button>Button</Button>
+          <Button disabled>Disabled</Button>
         </div>
         <div className='flex gap-4'>
-          <Button variant="primary">
-            Primary
-          </Button>
-          <Button disabled variant="primary">
+          <Button variant='primary'>Primary</Button>
+          <Button disabled variant='primary'>
             Primary disabled
           </Button>
         </div>

@@ -24,4 +24,4 @@ export const ShowItem: React.FC<props> = ({show, compact}) => {
       </div>
     </div>
   );
-}
+};

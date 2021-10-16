@@ -1,60 +1,60 @@
-import { useMemo } from "react";
+import {useMemo} from 'react';
 
-import { gql } from "graphql-request";
+import {gql} from 'graphql-request';
 
-import Show from "../../models/Show";
-import useAnilistRequest from "../../hooks/useAnilistRequest";
+import Show from '../../models/Show';
+import useAnilistRequest from '../../hooks/useAnilistRequest';
 
 function useQuery() {
   return gql`
-  query ($name: String!) {
-    MediaListCollection(userName: $name, type:ANIME) {
-      lists {
-        name
-        isCustomList
-        isSplitCompletedList
-        status
-        entries {
-          progress
-          media {
-            type
-            id
-            coverImage {
-              extraLarge
-              large
-              medium
-              color
-            }
-            nextAiringEpisode {
+    query ($name: String!) {
+      MediaListCollection(userName: $name, type: ANIME) {
+        lists {
+          name
+          isCustomList
+          isSplitCompletedList
+          status
+          entries {
+            progress
+            media {
+              type
               id
-              airingAt
-              timeUntilAiring
-            }
-            airingSchedule (perPage: 100) {
-              pageInfo {
-                total
-                perPage
-                currentPage
-                lastPage
-                hasNextPage
+              coverImage {
+                extraLarge
+                large
+                medium
+                color
               }
-              nodes {
+              nextAiringEpisode {
                 id
                 airingAt
                 timeUntilAiring
               }
-            }
-            episodes
-            status
-            title {
-              english
-              romaji
+              airingSchedule(perPage: 100) {
+                pageInfo {
+                  total
+                  perPage
+                  currentPage
+                  lastPage
+                  hasNextPage
+                }
+                nodes {
+                  id
+                  airingAt
+                  timeUntilAiring
+                }
+              }
+              episodes
+              status
+              title {
+                english
+                romaji
+              }
             }
           }
         }
       }
     }
-  }
   `;
 }
 
@@ -84,8 +84,7 @@ function useFilterShows(data: any, isLoading: boolean): [Show[], boolean] {
 
     const watchingList = data.MediaListCollection.lists
       .find((list: any) => list.name === 'Watching')
-      .entries
-      .map(toModel)
+      .entries.map(toModel)
       .sort(showSort);
 
     return [watchingList, isLoading];
@@ -95,8 +94,8 @@ function useFilterShows(data: any, isLoading: boolean): [Show[], boolean] {
 export default function useShows(): [Show[], boolean] {
   const variables = useMemo(() => {
     return {
-      name: "Skyflyer97"
-    }
+      name: 'Skyflyer97',
+    };
   }, []);
 
   const query = useQuery();

@@ -7,10 +7,10 @@ export default function RadioButtonComponents() {
       <h1>Radio buttons</h1>
       <Divider />
       <div>
-        <RadioButton label="Option A" value="A" name="option" />
-        <RadioButton label="Option B" value="B" name="option" />
-        <RadioButton label="Option C" value="C" name="option" />
+        <RadioButton label='Option A' value='A' name='option' />
+        <RadioButton label='Option B' value='B' name='option' />
+        <RadioButton label='Option C' value='C' name='option' />
       </div>
     </div>
-  )
+  );
 }

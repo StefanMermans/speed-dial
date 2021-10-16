@@ -6,9 +6,9 @@ export default function InputComponents() {
     <div className='flex gap-4 flex-col'>
       <h1>Inputs</h1>
       <Divider />
-      <Input value="input" />
-      <Input disabled value="Disabled" />
-      <Input placeholder="Placeholder" />
+      <Input value='input' />
+      <Input disabled value='Disabled' />
+      <Input placeholder='Placeholder' />
     </div>
   );
 }

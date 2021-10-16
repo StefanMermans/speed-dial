@@ -6,24 +6,28 @@ export default class Show {
     if (days <= 0) {
       return `Next episode in: ${hours} hours`;
     }
-  
+
     return `Next episode in: ${days} days ${hours} hours`;
   }
 
   getReleasingContent() {
     const [nextEpisode] = this.getNextEpisode();
-  
+
     if (nextEpisode.timeUntilAiring > 0) {
-      return this.formatNextEpTime(...this.secondsToDaysHours(nextEpisode.timeUntilAiring));
+      return this.formatNextEpTime(
+        ...this.secondsToDaysHours(nextEpisode.timeUntilAiring),
+      );
     } else {
       const eps = this.airedEpisodes();
-  
+
       return this.formatEpsToWatch(eps.length - this.progress);
     }
   }
 
   getNotYetReleasedContent() {
-    return this.formatNextEpTime(...this.secondsToDaysHours(this.media.nextAiringEpisode.timeUntilAiring));
+    return this.formatNextEpTime(
+      ...this.secondsToDaysHours(this.media.nextAiringEpisode.timeUntilAiring),
+    );
   }
 
   getFinishedContent() {
@@ -33,39 +37,39 @@ export default class Show {
   formatEpsToWatch(episodes: number) {
     return `${episodes} episodes to watch`;
   }
-  
+
   formatContent() {
     switch (this.media.status) {
-      case "FINISHED":
+      case 'FINISHED':
         return this.getFinishedContent();
-      case "RELEASING":
+      case 'RELEASING':
         return this.getReleasingContent();
-      case "NOT_YET_RELEASED":
+      case 'NOT_YET_RELEASED':
         return this.getNotYetReleasedContent();
       default:
-        return `Unknown media status: ${this.media.status}`
+        return `Unknown media status: ${this.media.status}`;
     }
   }
 
   episodesToWatch() {
     switch (this.media.status) {
-      case "RELEASING":
+      case 'RELEASING':
         return this.airedEpisodes().length - this.progress;
-      case "FINISHED":
-        default:
+      case 'FINISHED':
+      default:
         return this.media.episodes - this.progress;
     }
   }
 
   getNextEpisode() {
     const index = this.progress;
-  
+
     if (this.media.airingSchedule.nodes.length >= this.progress) {
       const nextEpisode = this.media.airingSchedule.nodes[index];
-      
+
       return [nextEpisode, index];
     }
-  
+
     return [null, -1];
   }
 
@@ -75,11 +79,13 @@ export default class Show {
     let days = hours / 24;
     let daysFloor = Math.floor(days);
     let hoursMod = Math.round(hours % 24);
-  
+
     return [daysFloor, hoursMod];
   }
 
   airedEpisodes() {
-    return this.media.airingSchedule.nodes.filter((scheduled: any) => scheduled.timeUntilAiring < 0);
+    return this.media.airingSchedule.nodes.filter(
+      (scheduled: any) => scheduled.timeUntilAiring < 0,
+    );
   }
 }

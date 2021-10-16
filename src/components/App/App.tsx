@@ -1,37 +1,35 @@
-import React from 'react';
-
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 
 import {Login} from '../Login/Login';
-import ShowList from "../ShowList/ShowList";
+import ShowList from '../ShowList/ShowList';
+import {Settings} from '../Settings/Settings';
 import SpeedDial from '../SpeedDial/SpeedDials';
-import { Settings } from '../Settings/Settings';
 import ComponentPage from '../../pages/ComponentPage/ComponentPage';
 
-import "./app.module.scss";
-import "./global.scss";
+import './app.module.scss';
+import './global.scss';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">
+        <Route path='/login'>
           <Login />
         </Route>
-        <Route path="/shows">
+        <Route path='/shows'>
           <ShowList />
         </Route>
-        <Route path="/settings">
+        <Route path='/settings'>
           <Settings />
         </Route>
-        <Route path="/components">
+        <Route path='/components'>
           <ComponentPage />
         </Route>
-        <Route path="/">
+        <Route path='/'>
           <SpeedDial />
         </Route>
       </Switch>
-      </Router>
+    </Router>
   );
 }
 

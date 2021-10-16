@@ -13,5 +13,5 @@ export default function HeaderComponents() {
         <span>Normal text</span>
       </div>
     </div>
-  )
+  );
 }
