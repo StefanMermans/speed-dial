@@ -35,7 +35,7 @@ export const Switch: React.FC<props> = (props) => {
 
     updateState(!checked);
   };
-  
+
   return (
     <div className='flex'>
       <input
