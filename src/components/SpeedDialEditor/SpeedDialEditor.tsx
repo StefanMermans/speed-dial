@@ -1,6 +1,7 @@
 import React, {Dispatch, useEffect, useState} from 'react';
 
 import {gql} from 'graphql-request';
+import {useHistory} from 'react-router';
 
 import {SiteItem} from './SiteItem';
 import {Button} from '../Form/Button';
@@ -36,6 +37,7 @@ const useSites = (): [Site[], SetSites] => {
 
 export const SpeedDialEditor: React.FC<props> = () => {
   const [sites, setSites] = useSites();
+  const history = useHistory();
 
   const handleSave = () => {
     client.request(
@@ -49,6 +51,10 @@ export const SpeedDialEditor: React.FC<props> = () => {
       {sites: JSON.stringify(sites)},
       getAuthHeader(),
     );
+  };
+
+  const handleCancel = () => {
+    history.push('/');
   };
 
   const handleSiteChange = (index: number, editedSite: Site) => {
@@ -69,9 +75,12 @@ export const SpeedDialEditor: React.FC<props> = () => {
           />
         ))}
       </div>
-      <Button onClick={handleSave} variant='primary'>
-        Save
-      </Button>
+      <div className='flex gap-4'>
+        <Button onClick={handleSave} variant='primary'>
+          Save
+        </Button>
+        <Button onClick={handleCancel}>Cancel</Button>
+      </div>
     </div>
   );
 };
