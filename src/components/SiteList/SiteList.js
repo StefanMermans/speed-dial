@@ -3,17 +3,13 @@ import React from "react";
 import Site from "../Site/Site";
 import useSiteList from "../../hooks/useSiteList";
 
-import styles from "./siteList.module.scss";
+export const BOOKMARK_WIDTH = 96 + 16;
 
-export const BOOKMARK_WIDTH = 120;
-
-export default function SiteList({paddingLeft}) {
+export default function SiteList({padding}) {
   const sites = useSiteList();
   
   return (
-    <div className={styles.container} style={{
-      paddingLeft: paddingLeft
-    }}>
+    <div className="flex flex-wrap gap-4 pt-8" style={{paddingLeft: padding}}>
       {sites.map(site => <Site key={site.name} site={site} />)}
     </div>
   )

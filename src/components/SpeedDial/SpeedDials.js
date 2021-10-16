@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react';
-import SiteList, { BOOKMARK_WIDTH } from "../SiteList/SiteList"
+
 import Clock from '../Clock/Clock';
 import background from "../../background-compressed.jpg"
-import styles from "./SpeedDial.module.scss";
 import useWindowResize from '../../hooks/useWindowResize';
 import SpeedDialShows from '../SpeedDialShows/SpeedDialShows';
+import SiteList, { BOOKMARK_WIDTH } from "../SiteList/SiteList"
+
+import styles from "./SpeedDial.module.scss";
 
 function usePadding() {
   const [windowWidth] = useWindowResize();
@@ -23,11 +25,11 @@ export default function SpeedDial() {
     <div className={styles.appContainer} style={{
       backgroundImage: `url(${background})`
     }}>
-      <SiteList paddingLeft={padding} />
+      <SiteList padding={padding} />
       <div className={styles.bottomWrapper}
-      style={{
-        padding: `40px ${20 + padding}px`,
-      }}
+        style={{
+          padding: `40px ${padding}px`,
+        }}
       >
         <Clock />
         <SpeedDialShows />

@@ -1,17 +1,26 @@
 import React from "react";
 
-import styles from "./site.module.scss";
-
 export default function Site(props) {
   const imageSource = props.site.icon;
   const backgroundColor = props.site.backgroundColor || "white";
-  const color = props.site.color || "black"
 
   return (
-    <div className={styles.container} style={{color}}>
-      <a className={styles.link} href={props.site.url} style={{backgroundColor}}>
-        <img className={styles.icon} src={imageSource} alt={props.site.name + "-icon"} />
-      </a>
-    </div>
+    <a
+      className="
+      rounded-2xl
+      w-24
+      h-24
+      p-2
+      overflow-hidden
+      transform
+      hover:scale-110
+      transition-transform
+      shadow-md
+      hover:shadow-xl"
+      style={{backgroundColor}}
+      href={props.site.url}
+    >
+      <img src={imageSource} className="w-full h-full" />
+    </a>
   )
 }
