@@ -2,8 +2,6 @@ import React from 'react';
 
 import Show from '../../../models/Show';
 
-import styles from './thumbnail.module.scss';
-
 interface props {
   show: Show;
 }
@@ -11,8 +9,8 @@ interface props {
 export const ThumbNail: React.FC<props> = ({show}) => {
   return (
     <img
+      className='h-14'
       alt={show.media.title.romaji}
-      className={styles.thumbnail}
       src={show.media.coverImage.medium}
     />
   );

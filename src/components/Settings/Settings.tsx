@@ -7,8 +7,6 @@ import {client} from '../../gqlClient';
 import {getAuthHeader} from '../../utils/utils';
 import useSiteList from '../../hooks/useSiteList';
 
-import styles from './settings.module.scss';
-
 const useSitesJson = (): [string, Dispatch<string>] => {
   const [sitesJson, setSitesJson] = useState('[]');
   const sites = useSiteList();
@@ -42,12 +40,10 @@ export const Settings = () => {
   };
 
   return (
-    <div className={styles.settingsPage}>
-      <div className={styles.settingsWrapper}>
-        <div className={styles.settingsContent}>
-          <textarea value={sitesJson} onChange={handleChange} />
-          <Button onClick={handleSave}>Save</Button>
-        </div>
+    <div className='page items-start'>
+      <div className='page-content'>
+        <textarea value={sitesJson} onChange={handleChange} />
+        <Button onClick={handleSave}>Save</Button>
       </div>
     </div>
   );

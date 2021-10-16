@@ -6,7 +6,6 @@ import {Settings} from '../Settings/Settings';
 import SpeedDial from '../SpeedDial/SpeedDials';
 import ComponentPage from '../../pages/ComponentPage/ComponentPage';
 
-import './app.module.scss';
 import './global.scss';
 
 function App() {

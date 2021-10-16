@@ -2,8 +2,6 @@ import React, {useMemo} from 'react';
 
 import Show from '../../../models/Show';
 
-import styles from './NextEpisode.module.scss';
-
 interface props {
   show: Show;
 }
@@ -23,7 +21,7 @@ export const NextEpisode: React.FC<props> = ({show}) => {
   const progressText = useProgressText(show);
 
   return (
-    <div className={styles.container}>
+    <div className='flex flex-col items-end'>
       <div>{progressText}</div>
       <div>{content}</div>
     </div>
