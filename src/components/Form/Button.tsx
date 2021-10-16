@@ -5,6 +5,10 @@ import cn from 'classnames';
 type Variant = 'primary' | 'default';
 type ClassFunction = (disabled?: boolean) => string;
 
+type props = {
+  variant?: Variant;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
+
 const getPrimaryClass = (disabled?: boolean) => {
   let className =
     'bg-indigo-600 disabled:bg-indigo-900 active:bg-indigo-400 disabled:text-gray-400 ';
@@ -30,10 +34,6 @@ const COLORS: Record<Variant, ClassFunction> = {
   primary: getPrimaryClass,
   default: getDefaultClass,
 };
-
-type props = {
-  variant?: Variant;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const Button: React.FC<props> = (props) => {
   const variant = props.variant ?? 'default';
