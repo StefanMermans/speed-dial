@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 
 import {useHistory} from 'react-router-dom';
 
-import {Button} from '../Form/Button';
-import {FormInput} from '../Form/FormInput';
+import {Button} from '../../components/Form/Button';
+import {FormInput} from '../../components/Form/FormInput';
 
 export const Login: React.FC = () => {
   const history = useHistory();

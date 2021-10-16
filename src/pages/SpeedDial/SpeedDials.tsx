@@ -1,12 +1,12 @@
 import {useMemo} from 'react';
 
-import Clock from '../Clock/Clock';
+import Clock from '../../components/Clock/Clock';
 import background from '../../background-compressed.jpg';
 import useWindowResize from '../../hooks/useWindowResize';
-import SpeedDialShows from '../SpeedDialShows/SpeedDialShows';
-import {BOOKMARK_WIDTH, SiteList} from '../SiteList/SiteList';
+import SpeedDialShows from '../../components/SpeedDialShows/SpeedDialShows';
+import {BOOKMARK_WIDTH, SiteList} from '../../components/SiteList/SiteList';
 
-function usePadding() {
+const usePadding = () => {
   const [windowWidth] = useWindowResize();
 
   return useMemo(() => {
@@ -14,7 +14,7 @@ function usePadding() {
     const excessSpace = windowWidth - count * BOOKMARK_WIDTH;
     return excessSpace / 2;
   }, [windowWidth]);
-}
+};
 
 export default function SpeedDial() {
   const padding = usePadding();

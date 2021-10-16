@@ -1,10 +1,10 @@
 import {Route, BrowserRouter as Router, Switch} from 'react-router-dom';
 
-import {Login} from '../Login/Login';
-import ShowList from '../ShowList/ShowList';
-import {Settings} from '../Settings/Settings';
-import SpeedDial from '../SpeedDial/SpeedDials';
-import ComponentPage from '../../pages/ComponentPage/ComponentPage';
+import {Login} from './pages/Login/Login';
+import {Settings} from './pages/Settings/Settings';
+import SpeedDial from './pages/SpeedDial/SpeedDials';
+import ShowList from './components/ShowList/ShowList';
+import ComponentPage from './pages/ComponentPage/ComponentPage';
 
 import './global.scss';
 

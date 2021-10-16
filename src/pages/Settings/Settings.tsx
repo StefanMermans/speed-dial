@@ -2,10 +2,10 @@ import React, {Dispatch, useEffect, useState} from 'react';
 
 import {gql} from 'graphql-request';
 
-import {Button} from '../Form/Button';
 import {client} from '../../gqlClient';
 import {getAuthHeader} from '../../utils/utils';
 import useSiteList from '../../hooks/useSiteList';
+import {Button} from '../../components/Form/Button';
 
 const useSitesJson = (): [string, Dispatch<string>] => {
   const [sitesJson, setSitesJson] = useState('[]');
@@ -43,7 +43,9 @@ export const Settings = () => {
     <div className='page items-start'>
       <div className='page-content'>
         <textarea value={sitesJson} onChange={handleChange} />
-        <Button onClick={handleSave}>Save</Button>
+        <Button onClick={handleSave} variant='primary'>
+          Save
+        </Button>
       </div>
     </div>
   );

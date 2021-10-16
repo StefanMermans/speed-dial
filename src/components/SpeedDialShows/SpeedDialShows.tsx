@@ -1,12 +1,11 @@
 import {useMemo} from 'react';
 
+import cn from 'classnames';
 import {useHistory} from 'react-router-dom';
 
 import Show from '../../models/Show';
 import useShows from '../ShowList/useShows';
 import {ShowItem} from '../ShowList/ShowItem/ShowItem';
-
-import styles from './SpeedDialShows.module.scss';
 
 function useSpeedDialShows(): [Show[], boolean] {
   const [shows, areShowLoading] = useShows();
@@ -26,9 +25,16 @@ export default function SpeedDialShows() {
     history.push('/shows');
   };
 
+  if (areShowLoading) {
+    return null;
+  }
+
   return (
     <div
-      className={`${styles.showList} ${areShowLoading ? styles.hidden : ''}`}
+      className={cn('flex flex-col transition-transform max-h-72', {
+        'translate-y-72': areShowLoading,
+        'translate-y-0': !areShowLoading,
+      })}
     >
       {areShowLoading || (
         <>
