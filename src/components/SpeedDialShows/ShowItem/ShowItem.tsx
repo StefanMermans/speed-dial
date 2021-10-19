@@ -15,7 +15,9 @@ export const ShowItem: React.FC<props> = ({show}) => {
       <div className='flex justify-between px-4 items-center w-full'>
         <div>
           <div>{show.media.title.romaji}</div>
-          <div className='text-sm'>{show.media.title.english}</div>
+          <div className='text-sm text-gray-400'>
+            {show.media.title.english}
+          </div>
         </div>
         <NextEpisode show={show} />
       </div>

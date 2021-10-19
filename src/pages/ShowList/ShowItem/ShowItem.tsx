@@ -17,7 +17,7 @@ export const ShowItem: React.FC<props> = ({show}) => {
       </div>
       <div>
         <div>{show.romaji}</div>
-        <div className='text-sm'>{show.english}</div>
+        <div className='text-sm text-gray-400'>{show.english}</div>
         <div className='pt-4'>{show.formatContent()}</div>
       </div>
     </div>
