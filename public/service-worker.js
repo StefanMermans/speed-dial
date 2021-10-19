@@ -1,8 +1,8 @@
 const CACHE_NAME = 'MANUAL_CACHE';
 
-self.addEventListener('fetch', function (event) {
-  console.log('fetch', event);
+const CACHE_REGEX = /.+\.(png|js|svg|jpg|jpeg)$/i;
 
+function cacheFetch(event) {
   event.respondWith(
     caches.match(event.request).then(function (response) {
       if (response) {
@@ -17,4 +17,10 @@ self.addEventListener('fetch', function (event) {
       }
     }),
   );
+}
+
+self.addEventListener('fetch', function (event) {
+  if (CACHE_REGEX.test(event.request.url)) {
+    cacheFetch(event);
+  }
 });
