@@ -42,7 +42,7 @@ export const SiteItem: React.FC<props> = ({
           style={{backgroundColor}}
           className='w-24 h-24 flex justify-center items-center p-2 rounded-2xl overflow-hidden shadow-md'
         >
-          <img className='w-full h-full' src={site.icon} />
+          <img className='w-full h-full' src={`/${site.icon}`} />
         </div>
         <div className='flex flex-col gap-4'>
           <Input
