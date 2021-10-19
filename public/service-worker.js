@@ -1,6 +1,6 @@
 const CACHE_NAME = 'MANUAL_CACHE';
 
-const CACHE_REGEX = /.+\.(png|js|svg|jpg|jpeg)$/i;
+const CACHE_REGEX = /.+\.(png|js|svg|jpg|jpeg|css|ico)$/i;
 const NO_CACHE_REGEX = /(chrome-extension:\/\/)/i;
 
 function cacheFetch(event) {
