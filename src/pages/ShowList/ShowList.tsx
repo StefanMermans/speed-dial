@@ -6,7 +6,7 @@ export default function ShowList() {
 
   return (
     <div className='page items-start'>
-      <div className='page-content'>
+      <div className='page-content flex flex-col gap-4'>
         {shows.map((show) => (
           <ShowItem key={show.media.id} show={show} />
         ))}

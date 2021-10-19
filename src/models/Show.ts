@@ -1,8 +1,23 @@
-export default class Show {
-  media: any;
+import IShowData, {IAiringScheduleEpisode, IMediaData} from './ShowData';
+
+export default class Show implements IShowData {
+  media: IMediaData;
   progress: any;
 
-  formatNextEpTime(days: number, hours: number) {
+  constructor(data: IShowData) {
+    this.media = data.media;
+    this.progress = data.progress;
+  }
+
+  get english() {
+    return this.media.title.english;
+  }
+
+  get romaji() {
+    return this.media.title.romaji;
+  }
+
+  formatNextEpTime(days: number, hours: number): string {
     if (days <= 0) {
       return `Next episode in: ${hours} hours`;
     }
@@ -10,10 +25,10 @@ export default class Show {
     return `Next episode in: ${days} days ${hours} hours`;
   }
 
-  getReleasingContent() {
+  getReleasingContent(): string {
     const [nextEpisode] = this.getNextEpisode();
 
-    if (nextEpisode.timeUntilAiring > 0) {
+    if (nextEpisode && nextEpisode.timeUntilAiring > 0) {
       return this.formatNextEpTime(
         ...this.secondsToDaysHours(nextEpisode.timeUntilAiring),
       );
@@ -24,21 +39,23 @@ export default class Show {
     }
   }
 
-  getNotYetReleasedContent() {
+  getNotYetReleasedContent(): string {
     return this.formatNextEpTime(
-      ...this.secondsToDaysHours(this.media.nextAiringEpisode.timeUntilAiring),
+      ...this.secondsToDaysHours(
+        this.media.nextAiringEpisode?.timeUntilAiring ?? 0,
+      ),
     );
   }
 
-  getFinishedContent() {
+  getFinishedContent(): string {
     return this.formatEpsToWatch(this.media.episodes - this.progress);
   }
 
-  formatEpsToWatch(episodes: number) {
+  formatEpsToWatch(episodes: number): string {
     return `${episodes} episodes to watch`;
   }
 
-  formatContent() {
+  formatContent(): string {
     switch (this.media.status) {
       case 'FINISHED':
         return this.getFinishedContent();
@@ -51,7 +68,7 @@ export default class Show {
     }
   }
 
-  episodesToWatch() {
+  episodesToWatch(): number {
     switch (this.media.status) {
       case 'RELEASING':
         return this.airedEpisodes().length - this.progress;
@@ -61,7 +78,7 @@ export default class Show {
     }
   }
 
-  getNextEpisode() {
+  getNextEpisode(): [IAiringScheduleEpisode | null, number] {
     const index = this.progress;
 
     if (this.media.airingSchedule.nodes.length >= this.progress) {
@@ -83,7 +100,7 @@ export default class Show {
     return [daysFloor, hoursMod];
   }
 
-  airedEpisodes() {
+  airedEpisodes(): IAiringScheduleEpisode[] {
     return this.media.airingSchedule.nodes.filter(
       (scheduled: any) => scheduled.timeUntilAiring < 0,
     );

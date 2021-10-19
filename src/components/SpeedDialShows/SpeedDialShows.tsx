@@ -4,8 +4,8 @@ import cn from 'classnames';
 import {useHistory} from 'react-router-dom';
 
 import Show from '../../models/Show';
-import useShows from '../ShowList/useShows';
-import {ShowItem} from '../ShowList/ShowItem/ShowItem';
+import {ShowItem} from './ShowItem/ShowItem';
+import useShows from '../../pages/ShowList/useShows';
 
 function useSpeedDialShows(): [Show[], boolean] {
   const [shows, areShowLoading] = useShows();

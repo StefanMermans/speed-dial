@@ -69,11 +69,12 @@ function showSort(showA: Show, showB: Show) {
   const [nextA] = showA.getNextEpisode();
   const [nextB] = showB.getNextEpisode();
 
-  return nextA.timeUntilAiring - nextB.timeUntilAiring;
+  // TODO: what if an episode is null?
+  return (nextA?.timeUntilAiring ?? 0) - (nextB?.timeUntilAiring ?? 0);
 }
 
 function toModel(show: any): Show {
-  return Object.assign(new Show(), show);
+  return new Show(show);
 }
 
 function useFilterShows(data: any, isLoading: boolean): [Show[], boolean] {
