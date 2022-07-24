@@ -15,6 +15,19 @@ interface props {
   onChange: (index: number, site: Site) => void;
 }
 
+const getBase64 = (file: File): Promise<string> => {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      if (typeof reader.result === 'string') {
+        resolve(reader.result);
+      }
+    };
+
+    reader.readAsDataURL(file);
+  });
+};
+
 export const SiteItem: React.FC<props> = ({
   site,
   index,
@@ -31,8 +44,28 @@ export const SiteItem: React.FC<props> = ({
       });
     };
 
+  const handleIndexChange = (event: ChangeEvent<HTMLInputElement>) => {
+    onChange(index, {
+      ...site,
+      index: +event.target.value,
+    });
+  };
+
   const handleDelete = () => {
     onDelete(index);
+  };
+
+  const handleFile = async (event: ChangeEvent<HTMLInputElement>) => {
+    const files: FileList = event.target.files as FileList;
+
+    if (files.length === 1) {
+      const file: File = files[0];
+      const b64 = await getBase64(file);
+      onChange(index, {
+        ...site,
+        imageB64: b64,
+      });
+    }
   };
 
   return (
@@ -55,6 +88,13 @@ export const SiteItem: React.FC<props> = ({
             value={site.url}
             onChange={makeChangeHandler('url')}
           />
+          <Input
+            type='number'
+            placeholder='index'
+            value={site.index ?? 0}
+            onChange={handleIndexChange}
+          />
+          <Input type='file' placeholder='Image' onChange={handleFile} />
         </div>
         <input
           type='color'

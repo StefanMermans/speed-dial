@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import {Button} from '../../components/Form/Button';
 import {FormInput} from '../../components/Form/FormInput';
 
 export const Login: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -32,7 +32,7 @@ export const Login: React.FC = () => {
     });
     const body = await response.json();
     localStorage.setItem('token', body.token);
-    history.push('/');
+    navigate('/');
   };
 
   return (

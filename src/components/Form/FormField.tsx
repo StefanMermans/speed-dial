@@ -1,14 +1,15 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 
-interface props {
+type props = {
   label: string;
-}
+  children: ReactNode;
+};
 
-export const FormField: React.FC<props> = ({label, children}) => {
+export const FormField = (props: props) => {
   return (
     <div className='flex flex-col'>
-      <label className='mb-4'>{label}</label>
-      {children}
+      <label className='mb-4'>{props.label}</label>
+      {props.children}
     </div>
   );
 };

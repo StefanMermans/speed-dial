@@ -6,6 +6,7 @@ interface props {
   open: boolean;
   className?: string;
   onClose: () => void;
+  children: React.ReactNode;
 }
 
 export const Modal: React.FC<props> = ({

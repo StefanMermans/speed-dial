@@ -1,13 +1,20 @@
 import {useState, useEffect} from 'react';
 
 import {gql} from 'graphql-request';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import {client} from '../gqlClient';
+import {Site} from '../models/Site';
 
-export default function useSiteList(): any[] {
-  const [sites, setSites] = useState<any[]>([]);
-  const history = useHistory();
+const sortSites = (sites: Site[]): Site[] => {
+  return sites.sort((a, b) => {
+    return (a.index ?? 99999) - (b.index ?? 99999);
+  });
+};
+
+export default function useSiteList(): Site[] {
+  const [sites, setSites] = useState<Site[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     try {
@@ -20,6 +27,7 @@ export default function useSiteList(): any[] {
                 url
                 backgroundColor
                 icon
+                index
               }
             }
           `,
@@ -28,14 +36,14 @@ export default function useSiteList(): any[] {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },
         )
-        .then((data) => setSites(data.sites))
+        .then((data) => setSites(sortSites(data.sites)))
         .catch(() => {
-          history.push('/login');
+          navigate('/login');
         });
     } catch (error) {
-      history.push('/login');
+      navigate('/login');
     }
-  }, [history]);
+  }, [navigate]);
 
   return sites;
 }

@@ -1,7 +1,7 @@
 import React, {Dispatch, useEffect, useState} from 'react';
 
 import {gql} from 'graphql-request';
-import {useHistory} from 'react-router';
+import {useNavigate} from 'react-router-dom';
 
 import {SiteItem} from './SiteItem';
 import {Button} from '../Form/Button';
@@ -38,7 +38,7 @@ const useSites = (): [Site[], SetSites] => {
 
 export const SpeedDialEditor: React.FC<props> = () => {
   const [sites, setSites] = useSites();
-  const history = useHistory();
+  const navigate = useNavigate();
   const [deleteIndex, setDeleteIndex] = useState<number>(-1);
 
   const handleSave = () => {
@@ -56,7 +56,7 @@ export const SpeedDialEditor: React.FC<props> = () => {
   };
 
   const handleCancel = () => {
-    history.push('/');
+    navigate('/');
   };
 
   const handleSiteChange = (index: number, editedSite: Site) => {

@@ -19,36 +19,27 @@ export default function useAnilistRequest(
   }, [query, variables]);
 
   useEffect(() => {
-    function handleResponse(response: Response) {
-      return response.json().then(function (json) {
-        return response.ok ? json : Promise.reject(json);
-      });
-    }
-
-    function handleData(data: any) {
-      setData(data.data);
-      setIsLoading(false);
-    }
-
-    function handleError(error: Error) {
-      setIsLoading(false);
-      console.error(error);
-      alert('error during anilist request!');
-    }
-
-    const options = {
+    fetch(BASE_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         Accept: 'application/json',
       },
       body,
-    };
-
-    fetch(BASE_URL, options)
-      .then(handleResponse)
-      .then(handleData)
-      .catch(handleError);
+    })
+      .then(async (response: Response) => {
+        const json = await response.json();
+        return response.ok ? json : Promise.reject(json);
+      })
+      .then((data: any) => {
+        setData(data.data);
+        setIsLoading(false);
+      })
+      .catch((error: Error) => {
+        setIsLoading(false);
+        console.error(error);
+        alert('error during anilist request!');
+      });
   }, [body]);
 
   return [data, isLoading];

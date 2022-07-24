@@ -1,7 +1,7 @@
 import {useMemo} from 'react';
 
 import cn from 'classnames';
-import {useHistory} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import Show from '../../models/Show';
 import {ShowItem} from './ShowItem/ShowItem';
@@ -19,10 +19,10 @@ function useSpeedDialShows(): [Show[], boolean] {
 
 export default function SpeedDialShows() {
   const [shows, areShowLoading] = useSpeedDialShows();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleShowMoreShows = () => {
-    history.push('/shows');
+    navigate('/shows');
   };
 
   if (areShowLoading) {

@@ -1,7 +1,7 @@
 .page {
   @apply
     h-screen
-  bg-gray-1
+    bg-gray-1
     p-8
     flex
     justify-center
@@ -12,7 +12,7 @@
   @apply
     rounded-md
     bg-gray-2
-    max-w-3xl
+    max-w-5xl
     w-full
     h-auto
     p-4;
