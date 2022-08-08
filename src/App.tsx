@@ -11,7 +11,7 @@ import {ImageSettings} from './pages/ImageSettings/ImageSettings';
 
 import './scss/page.css';
 import './global.css';
-import { ExerciseIndex } from './pages/Workout/ExerciseIndex/ExerciseIndex';
+import {ExerciseIndex} from './pages/Workout/ExerciseIndex/ExerciseIndex';
 
 function App() {
   return (
